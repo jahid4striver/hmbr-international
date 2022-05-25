@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-bootstrap';
 import Dashboard from './components/pages/Dashboard/Dashboard';
 import MyOrders from './components/pages/Dashboard/MyOrders';
 import AddReview from './components/pages/Dashboard/AddReview';
+import MyProfile from './components/pages/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -30,14 +31,15 @@ function App() {
           <Purchase />
         </PrivateRoute>}>
         </Route>
-
-
-      <Route path='/dashboard' element={<PrivateRoute>
-        <Dashboard/>
-      </PrivateRoute>}>
-        <Route index element={<MyOrders/>}></Route>
-        <Route path='addreview' element={<AddReview/>}></Route>
-      </Route>
+        <Route path='/dashboard' element={<PrivateRoute>
+          <Dashboard />
+        </PrivateRoute>}>
+          <Route index element={<MyOrders />}></Route>
+          <Route path='addreview' element={<AddReview />}></Route>
+          <Route path='myprofile' element={<MyProfile />}></Route>
+          <Route path='addreview' element={<AddReview />}></Route>
+          <Route path='addreview' element={<AddReview />}></Route>
+        </Route>
 
       </Routes>
 
