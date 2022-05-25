@@ -2,14 +2,17 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import login from '../../../assets/images/images/login.jpeg'
+import auth from '../../../firebase.init';
 import SocailLogin from './SocialLogin';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
 
     const onSubmit = data => {
 
-        console.log(data)
+        signInWithEmailAndPassword(data.email, data.password);
 
     };
     return (
@@ -36,9 +39,9 @@ const Login = () => {
                         </label>
                     </div>
                     <button type='submit' className='btn btn-accent w-full text-white font-bold'>Login</button>
-                <p>Not Have a Account? <Link to='/signup'><button className='text-accent font-bold my-2'>Create Account</button></Link></p>
-                <div class="divider">OR</div>
-                <SocailLogin/>
+                    <p>Not Have an Account? <Link to='/signup'><button className='text-accent font-bold my-2'>Create Account</button></Link></p>
+                    <div class="divider">OR</div>
+                    <SocailLogin />
                 </form>
             </div>
         </div>

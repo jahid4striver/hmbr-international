@@ -1,10 +1,17 @@
 import React from 'react';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import google from '../../../assets/images/icons/google.png'
+import auth from '../../../firebase.init';
 
 const SocailLogin = () => {
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+
+    const handleGoogleSignIn= ()=>{
+        signInWithGoogle();
+    }
     return (
         <div>
-            <button class="btn btn-accent text-white"> <img width='30px' className='mr-2' src={google} alt="" /> Sign In With Google</button>
+            <button onClick={handleGoogleSignIn} class="btn btn-accent text-white"> <img width='30px' className='mr-2' src={google} alt="" /> Sign In With Google</button>
         </div>
     );
 };
