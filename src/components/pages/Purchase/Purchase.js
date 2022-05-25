@@ -18,8 +18,30 @@ const Purchase = () => {
             .then(data => setTool(data))
     }, [minQty])
 
-    const handleOrderSubmit=()=>{
+    const handleOrderSubmit=(e)=>{
+        e.preventDefault();
+        const name= e.target.name.value;
+        const date= e.target.date.value;
+        const qyt= e.target.qyt.value;
+        const customer= e.target.customer.value;
+        const email= e.target.email.value;
+        const address= e.target.address.value;
+        const phone= e.target.phone.value;
 
+        const purchaseOrder={date, name,qyt, customer, email, address, phone}
+
+        fetch('http://localhost:5000/orders',{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body:JSON.stringify(purchaseOrder)
+        })
+        .then(res=> res.json())
+        .then(data=>{
+            console.log(data);
+        })
+        
     }
 
     const handleQyt = (e) => {
@@ -56,15 +78,15 @@ const Purchase = () => {
                 </div>
                 <div className='card card-compact w-10/12 bg-base-100 shadow-xl mx-auto p-8'>
                     <h2 className='text-2xl text-center font-bold my-8'>Purchase Order Form</h2>
-                    <form className='flex flex-col'>
+                    <form onSubmit={handleOrderSubmit} className='flex flex-col'>
                         <label class="label">
                             <span class="label-text">Date</span>
                         </label>
-                        <input type="date" placeholder="Type here" class="input input-bordered w-full" required/>
+                        <input name='date' type="date" placeholder="Type here" class="input input-bordered w-full" required/>
                         <label class="label">
                             <span class="label-text">Product Name</span>
                         </label>
-                        <input type="text" value={tool.name} disabled class="input input-bordered w-full" />
+                        <input name='name' type="text" value={tool.name} disabled class="input input-bordered w-full" />
                         <label class="label">
                             <span class="label-text">Quantity</span>
                         </label>
@@ -75,19 +97,19 @@ const Purchase = () => {
                         <label class="label">
                             <span class="label-text">Customer Name</span>
                         </label>
-                        <input type="text" value={user?.displayName} disabled class="input input-bordered w-full" />
+                        <input name='customer' type="text" value={user?.displayName} disabled class="input input-bordered w-full" />
                         <label class="label">
                             <span class="label-text">Customer Email</span>
                         </label>
-                        <input type="text" value={user?.email} disabled class="input input-bordered w-full" />
+                        <input name='email' type="text" value={user?.email} disabled class="input input-bordered w-full" />
                         <label class="label">
                             <span class="label-text">Address</span>
                         </label>
-                        <input type="text" placeholder="Type Your Address" required class="input input-bordered w-full" />
+                        <input name='address' type="text" placeholder="Type Your Address" required class="input input-bordered w-full" />
                         <label class="label">
                             <span class="label-text">Phone No</span>
                         </label>
-                        <input type="text" placeholder="Type Your Phone No" required class="input input-bordered w-full" />
+                        <input name='phone' type="text" placeholder="Type Your Phone No" required class="input input-bordered w-full" />
                         <input type="submit" disabled={minQty} value='Submit Order' class="btn btn-accent text-white font-bold input input-bordered w-full mt-5" />
 
                     </form>
