@@ -6,6 +6,8 @@ import Home from './components/pages/Home/Home';
 import Footer from './components/shared/Footer';
 import Login from './components/pages/Authentication/Login';
 import SignUp from './components/pages/Authentication/SignUp';
+import Purchase from './components/pages/Purchase/Purchase';
+import PrivateRoute from './components/pages/Authentication/PrivateRoute';
 
 function App() {
   return (
@@ -17,6 +19,17 @@ function App() {
         <Route path='/Login' element={<Login/>}></Route>
         <Route path='/signup' element={<SignUp/>}></Route>
       </Routes>
+      {/* Private Routes */}
+    <Routes>
+      <Route path='/purchase/:id' element={<PrivateRoute>
+        <Purchase/>
+      </PrivateRoute>}></Route>
+    </Routes>
+
+      {/* <Routes element={<PrivateRoute/>}>
+          <Route path='/purchase/:id' element={<Purchase/>}></Route>
+      </Routes> */}
+
       <Footer></Footer>
     </div>
   );

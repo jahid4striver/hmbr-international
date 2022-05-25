@@ -30,7 +30,8 @@ const SignUp = () => {
     return (
         <div>
             <div className='flex justify-center items-center my-16'>
-                <form onClick={handleSubmit(onSubmit)} className='w-9/12 lg:w-4/12 md:w-1/2 shadow-2xl p-12'>
+               <div className='w-9/12 lg:w-4/12 md:w-1/2 shadow-2xl p-12'>
+               <form onClick={handleSubmit(onSubmit)}>
                     <img className='w-3/4 mx-auto' src={login} alt="" />
                     <div class="form-control">
                         <label class="label">
@@ -70,10 +71,11 @@ const SignUp = () => {
                     </div>
                     <p className='text-red-600 font-bold'>{passwordError}</p>
                     <button type='submit' className='btn btn-accent w-full text-white font-bold'>Sign Up</button>
+                </form>
                     <p>Already Have an Account? <Link to='/login'><button className='text-accent font-bold my-2'>Login</button></Link></p>
                     <div class="divider">OR</div>
                     <SocailLogin />
-                </form>
+               </div>
             </div>
         </div>
     );
