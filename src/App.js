@@ -7,13 +7,13 @@ import Login from './components/pages/Authentication/Login';
 import SignUp from './components/pages/Authentication/SignUp';
 import Purchase from './components/pages/Purchase/Purchase';
 import PrivateRoute from './components/pages/Authentication/PrivateRoute';
-import { ToastContainer } from 'react-bootstrap';
 import Dashboard from './components/pages/Dashboard/Dashboard';
 import MyOrders from './components/pages/Dashboard/MyOrders';
 import AddReview from './components/pages/Dashboard/AddReview';
 import MyProfile from './components/pages/Dashboard/MyProfile';
 import Payment from './components/pages/Dashboard/Payment';
-import CancelModal from './components/pages/Dashboard/CancelModal';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
