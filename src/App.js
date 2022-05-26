@@ -13,6 +13,7 @@ import MyOrders from './components/pages/Dashboard/MyOrders';
 import AddReview from './components/pages/Dashboard/AddReview';
 import MyProfile from './components/pages/Dashboard/MyProfile';
 import Payment from './components/pages/Dashboard/Payment';
+import CancelModal from './components/pages/Dashboard/CancelModal';
 
 function App() {
   return (
