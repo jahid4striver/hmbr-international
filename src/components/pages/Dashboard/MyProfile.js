@@ -69,7 +69,10 @@ const MyProfile = () => {
                     <h3 className='text-xl text-left border border-1 border-accent p-2 mb-2'>Business Address: {currentUser?.businessAddress}</h3>
                     <h3 className='text-xl text-left border border-1 border-accent p-2 mb-2'>Linkedin Profile: {currentUser?.linkedin}</h3>
                     <h3 className='text-xl text-left border border-1 border-accent p-2 mb-2'>Your Details: {currentUser?.details}</h3>
-                    <button disabled={!isActive} className='btn btn-accent mt-4 text-white font-bold'><Link to='/dashboard/myprofile/updateprofile'>Update Your Profile</Link></button>
+                    {
+                        isActive || currentUser.active?<button className='btn btn-accent mt-4 text-white font-bold'><Link to='/dashboard/myprofile/updateprofile'>Update Your Profile</Link></button>:<button disabled className='btn btn-accent mt-4 text-white font-bold'>Active Profile For Update</button>
+                    }
+                    
                 </div>
                
             </div>
