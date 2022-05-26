@@ -8,6 +8,7 @@ import Loading from '../../shared/Loading';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
     const [currentUser, setCurrentUser]= useState('');
+    const [isActive, setIsActive]= useState(false);
 
     const email=user.email;
 
@@ -21,7 +22,7 @@ const MyProfile = () => {
             console.log(data);
         })
         
-    },[url])
+    },[url, isActive])
     
     const addUserToDatabase=()=>{
 
@@ -41,7 +42,7 @@ const MyProfile = () => {
         })
         .then(res=> res.json())
         .then(data=>{
-            console.log(data);
+            setIsActive(true);
         })
 
     }
@@ -68,7 +69,7 @@ const MyProfile = () => {
                     <h3 className='text-xl text-left border border-1 border-accent p-2 mb-2'>Business Address: {currentUser?.businessAddress}</h3>
                     <h3 className='text-xl text-left border border-1 border-accent p-2 mb-2'>Linkedin Profile: {currentUser?.linkedin}</h3>
                     <h3 className='text-xl text-left border border-1 border-accent p-2 mb-2'>Your Details: {currentUser?.details}</h3>
-                    <button className='btn btn-accent mt-4 text-white font-bold'><Link to='/dashboard/myprofile/updateprofile'>Update Your Profile</Link></button>
+                    <button disabled={!isActive} className='btn btn-accent mt-4 text-white font-bold'><Link to='/dashboard/myprofile/updateprofile'>Update Your Profile</Link></button>
                 </div>
                
             </div>

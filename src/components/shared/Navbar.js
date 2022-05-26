@@ -16,7 +16,7 @@ const Navbar = () => {
         <li><NavLink className='mt-2' to='/contact'>Contact Us</NavLink></li>
     
         {
-            user && <li><p className='mt-2 font-bold'>{user.displayName}</p></li>
+            user && <li><Link to='/dashboard/myprofile' className='mt-2 font-bold'>{user.displayName}</Link></li>
         }
        {
           user? <li><button onClick={()=>signOut(auth)} className='mt-2'>Logout</button></li>  :  <li><NavLink className='mt-2' to='/login'>Login</NavLink></li>
@@ -35,7 +35,7 @@ const Navbar = () => {
                     {Links}
                     </ul>
                 </div>
-                <a class="btn btn-ghost normal-case text-xl">HMBR International</a>
+                <Link to='/' class="btn btn-ghost normal-case text-xl">HMBR International</Link>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
