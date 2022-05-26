@@ -12,6 +12,7 @@ import Dashboard from './components/pages/Dashboard/Dashboard';
 import MyOrders from './components/pages/Dashboard/MyOrders';
 import AddReview from './components/pages/Dashboard/AddReview';
 import MyProfile from './components/pages/Dashboard/MyProfile';
+import Payment from './components/pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
           <Route index element={<MyOrders />}></Route>
           <Route path='addreview' element={<AddReview />}></Route>
           <Route path='myprofile' element={<MyProfile />}></Route>
-          <Route path='addreview' element={<AddReview />}></Route>
+          <Route path='payment/:id' element={<Payment />}></Route>
           <Route path='addreview' element={<AddReview />}></Route>
         </Route>
 

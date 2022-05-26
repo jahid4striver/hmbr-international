@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
@@ -13,11 +13,16 @@ const Purchase = () => {
     const [tool, setTool] = useState([]);
     const [minQty, setMinQty] = useState('');
 
+    const [totalPrice, setTotalPrice]= useState();
+    
+    const qytRef= useRef();
+    const priceRef= useRef();
+
     useEffect(() => {
         fetch(`http://localhost:5000/tools/${id}`)
             .then(res => res.json())
             .then(data => setTool(data))
-    }, [minQty])
+    }, [minQty, totalPrice])
 
     const handleOrderSubmit=(e)=>{
         e.preventDefault();
@@ -28,8 +33,10 @@ const Purchase = () => {
         const email= e.target.email.value;
         const address= e.target.address.value;
         const phone= e.target.phone.value;
+        const price= e.target.price.value;
+        const amount= e.target.amount.value;
 
-        const purchaseOrder={date, name,qyt, customer, email, address, phone}
+        const purchaseOrder={date, name,qyt, customer, email, address, phone, price, amount}
 
         fetch('http://localhost:5000/orders',{
             method: 'POST',
@@ -55,6 +62,14 @@ const Purchase = () => {
         } if (quantity > tool.minimum_qyt && quantity < tool.available_qyt) {
             setMinQty('')
         }
+
+    }
+
+    const handleTotalPrice= (e)=>{
+        const qyt= qytRef.current.value;
+        const price= priceRef.current.value;
+        setTotalPrice(qyt*price);
+        console.log(qyt*price);
     }
 
     // if(isLoading){
@@ -79,7 +94,7 @@ const Purchase = () => {
                     </div>
                 </div>
                 <div className='card card-compact w-10/12 bg-base-100 shadow-xl mx-auto p-8'>
-                    <h2 className='text-2xl text-center font-bold my-8'>Purchase Order Form</h2>
+                    <h2 className='text-2xl text-center font-bold my-2'>Purchase Order Form</h2>
                     <form onSubmit={handleOrderSubmit} className='flex flex-col'>
                         <label class="label">
                             <span class="label-text">Date</span>
@@ -92,10 +107,18 @@ const Purchase = () => {
                         <label class="label">
                             <span class="label-text">Quantity</span>
                         </label>
-                        <input name='qyt' onChange={handleQyt} type="number" defaultValue={tool.minimum_qyt} class="input input-bordered w-full" />
+                        <input ref={qytRef} onBlur={handleTotalPrice} name='qyt' onChange={handleQyt} type="number" defaultValue={tool.minimum_qyt} class="input input-bordered w-full" />
                         <label class="label">
                             <span class="label-text-alt text-red-500">{minQty}</span>
                         </label>
+                        <label class="label">
+                            <span class="label-text">Unit Price</span>
+                        </label>
+                        <input ref={priceRef} name='price' type="number" value={tool.price} class="input input-bordered w-full" />
+                        <label class="label">
+                            <span class="label-text">Total Amount</span>
+                        </label>
+                        <input  name='amount' type="number"  defaultValue={totalPrice} class="input input-bordered w-full" />
                         <label class="label">
                             <span class="label-text">Customer Name</span>
                         </label>
