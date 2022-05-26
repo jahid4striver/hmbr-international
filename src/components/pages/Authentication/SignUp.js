@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import login from '../../../assets/images/images/login.jpeg'
 import auth from '../../../firebase.init';
 import SocailLogin from './SocialLogin';
@@ -11,16 +11,16 @@ const SignUp = () => {
     const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [passwordError,setPasswordError]= useState('');
+    const navigate= useNavigate();
 
-    console.log(user);
+    
 
 
     const onSubmit = async data => {
         if(data.password===data.conPassword){
            await createUserWithEmailAndPassword(data.email, data.password);
            await updateProfile({displayName: data.name});
-           reset()
-
+           navigate('/');
         }else{
             return 
         }
