@@ -13,7 +13,7 @@ const ManageOrder = ({order, index, setCancelOrder, refetch}) => {
             status: 'Shipped',
         }
 
-        fetch(`http://localhost:5000/manageorders/${_id}`,{
+        fetch(`https://salty-dawn-53601.herokuapp.com/manageorders/${_id}`,{
             method: 'PUT',
             headers:{
                 'content-type': 'application/json'
@@ -24,7 +24,7 @@ const ManageOrder = ({order, index, setCancelOrder, refetch}) => {
         .then(data=>{
             toast('Order Shiffted')
             refetch();
-            // const url=`http://localhost:5000//toolsqytupdate/${_id}`
+            // const url=`https://salty-dawn-53601.herokuapp.com//toolsqytupdate/${_id}`
             // fetch(url,{
             //     method: 'PUT',
             //     headers:{

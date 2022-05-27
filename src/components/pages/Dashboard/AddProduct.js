@@ -35,7 +35,7 @@ const AddProduct = () => {
                     console.log(img);
                     const tool = { name, price, description, minimum_qyt, available_qyt, img };
 
-                    fetch('http://localhost:5000/tools',{
+                    fetch('https://salty-dawn-53601.herokuapp.com/tools',{
                         method: 'POST', 
                         headers:{
                             'content-type': 'application/json'
@@ -58,7 +58,7 @@ const AddProduct = () => {
 
 
 
-        // fetch(`http://localhost:5000/users/${user.email}`, {
+        // fetch(`https://salty-dawn-53601.herokuapp.com/users/${user.email}`, {
         //     method: 'PUT',
         //     headers: {
         //         'content-type': 'application/json'

@@ -11,7 +11,7 @@ const MyOrders = () => {
     const [cancelOrder, setCancelOrder]= useState(null);
     // const email= user?.email;
 
-    const { data: myOrders, isLoading, refetch } = useQuery(['orders', user.email], () => fetch(`http://localhost:5000/orders?email=${user.email}`).then(res => res.json()));
+    const { data: myOrders, isLoading, refetch } = useQuery(['orders', user.email], () => fetch(`https://salty-dawn-53601.herokuapp.com/orders?email=${user.email}`).then(res => res.json()));
 
     if (isLoading) {
         return <Loading></Loading>

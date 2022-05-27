@@ -4,7 +4,7 @@ const CancelModal = ({cancelOrder, refetch}) => {
     
     const handleCancelOrder=()=>{
 
-        fetch(`http://localhost:5000/orders/${cancelOrder?._id}`,{
+        fetch(`https://salty-dawn-53601.herokuapp.com/orders/${cancelOrder?._id}`,{
             method: 'DELETE'
         })
         .then(res=> res.json())

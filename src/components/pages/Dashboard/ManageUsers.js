@@ -13,7 +13,7 @@ const ManageUsers = () => {
     const [deleteUser, setDeleteUser]= useState(null);
     // const email= user?.email;
 
-    const { data: allUsers, isLoading, refetch } = useQuery(['allusers'], () => fetch('http://localhost:5000/allusers').then(res => res.json()));
+    const { data: allUsers, isLoading, refetch } = useQuery(['allusers'], () => fetch('https://salty-dawn-53601.herokuapp.com/allusers').then(res => res.json()));
 
     if (isLoading) {
         return <Loading></Loading>

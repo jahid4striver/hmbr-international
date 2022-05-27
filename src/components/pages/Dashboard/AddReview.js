@@ -19,7 +19,7 @@ const AddReview = () => {
        const review={name, company, rating, description,img}
        
        
-       fetch('http://localhost:5000/reviews',{
+       fetch('https://salty-dawn-53601.herokuapp.com/reviews',{
            method:'POST',
            headers:{
                'content-type': 'application/json'

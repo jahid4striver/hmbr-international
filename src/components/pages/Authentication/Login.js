@@ -5,12 +5,14 @@ import login from '../../../assets/images/images/login.jpeg'
 import auth from '../../../firebase.init';
 import SocailLogin from './SocialLogin';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import useWebToken from '../../../hooks/useWebToken';
 
 
 const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
 
+    const [token]= useWebToken(user);
 
     const navigate = useNavigate();
     const location = useLocation();

@@ -3,11 +3,12 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import google from '../../../assets/images/icons/google.png'
 import auth from '../../../firebase.init';
+import useWebToken from '../../../hooks/useWebToken';
 
 const SocailLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
-    
+    const [token]= useWebToken(user);
 
     const navigate = useNavigate();
     const location = useLocation();

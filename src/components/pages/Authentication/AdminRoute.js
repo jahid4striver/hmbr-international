@@ -10,7 +10,7 @@ const AdminRoute = ({ children }) => {
 
     const email = user.email;
 
-    const url = `http://localhost:5000/users?email=${email}`
+    const url = `https://salty-dawn-53601.herokuapp.com/users?email=${email}`
 
     useEffect(() => {
         fetch(url)

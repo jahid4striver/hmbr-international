@@ -5,6 +5,7 @@ import login from '../../../assets/images/images/login.jpeg'
 import auth from '../../../firebase.init';
 import SocailLogin from './SocialLogin';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import useWebToken from '../../../hooks/useWebToken';
 
 
 const SignUp = () => {
@@ -13,7 +14,7 @@ const SignUp = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [passwordError,setPasswordError]= useState('');
     const navigate= useNavigate();
-
+    const [token]= useWebToken(user);
 
     const onSubmit = async data => {
         if(data.password===data.conPassword){

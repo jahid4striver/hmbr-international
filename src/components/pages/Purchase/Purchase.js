@@ -19,7 +19,7 @@ const Purchase = () => {
     const priceRef= useRef();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tools/${id}`)
+        fetch(`https://salty-dawn-53601.herokuapp.com/tools/${id}`)
             .then(res => res.json())
             .then(data => setTool(data))
     }, [minQty, totalPrice])
@@ -38,7 +38,7 @@ const Purchase = () => {
 
         const purchaseOrder={date, name,qyt, customer, email, address, phone, price, amount}
 
-        fetch('http://localhost:5000/orders',{
+        fetch('https://salty-dawn-53601.herokuapp.com/orders',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -5,9 +5,11 @@ const useWebToken = (user) => {
     const email = user?.user?.email;
     const currentUser = { email: email };
 
+
     useEffect(() => {
-            if(email){
-                fetch(`http://localhost:5000/users/${email}`, {
+          
+                if(email){
+                    fetch(`http://localhost:5000/users/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -18,12 +20,14 @@ const useWebToken = (user) => {
                 .then(data => {
                     console.log(data);
                     const accessToken = data.token;
+                    console.log(accessToken);
                     localStorage.setItem('accessToken', accessToken);
                     setToken(accessToken);
                 })
-            }
+                }
+            
         
-    }, [])
+    }, [currentUser,email])
 
     return [token]
 };

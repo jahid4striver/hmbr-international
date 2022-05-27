@@ -8,7 +8,7 @@ const MyOrder = ({user, index, setDeleteUser, refetch}) => {
     const {_id, displayName, email,role, photoURL }= user;
 
     const handleMakeAdmin=()=>{
-        const url=`http://localhost:5000/users/${email}`;
+        const url=`https://salty-dawn-53601.herokuapp.com/users/${email}`;
 
         fetch(url, {
             method: 'PUT',

@@ -12,7 +12,7 @@ const Payment = () => {
     console.log(stripePromise);
 
     const { id } = useParams();
-    const url = `http://localhost:5000/orders/${id}`
+    const url = `https://salty-dawn-53601.herokuapp.com/orders/${id}`
     const { data: order, isLoading } = useQuery(['order'], () => fetch(url).then(res => res.json()));
 
     if (isLoading) {

@@ -13,7 +13,7 @@ const CheckOutForm = ({order}) => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/create-payment-intent',{
+        fetch('https://salty-dawn-53601.herokuapp.com/create-payment-intent',{
             method: 'POST',
             headers:{
                 'content-type': 'application/json'
@@ -73,7 +73,7 @@ const CheckOutForm = ({order}) => {
             status: 'Pending',
         }
 
-        fetch(`http://localhost:5000/orders/${_id}`,{
+        fetch(`https://salty-dawn-53601.herokuapp.com/orders/${_id}`,{
             method: 'PATCH',
             headers:{
                 'content-type': 'application/json'

@@ -24,7 +24,7 @@ const UpdateProfile = () => {
 
         const userDetails={displayName, email, education, personalPhone, personalAddress, businessName, businessAddress, businessPhone, linkedin,details}
         
-        fetch(`http://localhost:5000/users/${user.email}`,{
+        fetch(`https://salty-dawn-53601.herokuapp.com/users/${user.email}`,{
                 method: 'PUT',
                 headers:{
                     'content-type': 'application/json'

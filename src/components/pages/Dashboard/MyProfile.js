@@ -12,7 +12,7 @@ const MyProfile = () => {
 
     const email=user.email;
 
- const url= `http://localhost:5000/users?email=${email}`
+ const url= `https://salty-dawn-53601.herokuapp.com/users?email=${email}`
 
     useEffect(()=>{
             fetch(url)
@@ -33,7 +33,7 @@ const MyProfile = () => {
         }
         console.log(userDetails);
 
-        fetch('http://localhost:5000/users',{
+        fetch('https://salty-dawn-53601.herokuapp.com/users',{
             method:'POST',
             headers:{
                 'content-type': 'application/json'

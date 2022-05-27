@@ -4,7 +4,7 @@ const DeleteUserModal = ({deleteUser, refetch}) => {
     
     const handleDeleteUser=()=>{
 
-        fetch(`http://localhost:5000/users/${deleteUser?._id}`,{
+        fetch(`https://salty-dawn-53601.herokuapp.com/users/${deleteUser?._id}`,{
             method: 'DELETE'
         })
         .then(res=> res.json())
