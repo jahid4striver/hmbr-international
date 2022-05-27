@@ -12,9 +12,11 @@ import MyOrders from './components/pages/Dashboard/MyOrders';
 import AddReview from './components/pages/Dashboard/AddReview';
 import MyProfile from './components/pages/Dashboard/MyProfile';
 import Payment from './components/pages/Dashboard/Payment';
-import {ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import UpdateProfile from './components/pages/Dashboard/UpdateProfile';
+import AdminRoute from './components/pages/Authentication/AdminRoute';
+import AddProduct from './components/pages/Dashboard/AddProduct';
 
 function App() {
   return (
@@ -43,7 +45,15 @@ function App() {
           <Route path='myprofile/updateprofile' element={<UpdateProfile />}></Route>
           <Route path='payment/:id' element={<Payment />}></Route>
           <Route path='addreview' element={<AddReview />}></Route>
+          <Route path='addproduct' element={<AddProduct />}></Route>
+
+
         </Route>
+
+
+        {/* Admin Routes */}
+
+
 
       </Routes>
 
