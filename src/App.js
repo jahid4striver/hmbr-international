@@ -17,6 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import UpdateProfile from './components/pages/Dashboard/UpdateProfile';
 import AdminRoute from './components/pages/Authentication/AdminRoute';
 import AddProduct from './components/pages/Dashboard/AddProduct';
+import ManageProducts from './components/pages/Dashboard/ManageProducts';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path='payment/:id' element={<Payment />}></Route>
           <Route path='addreview' element={<AddReview />}></Route>
           <Route path='addproduct' element={<AddProduct />}></Route>
+          <Route path='manageproducts' element={<ManageProducts />}></Route>
 
 
         </Route>
