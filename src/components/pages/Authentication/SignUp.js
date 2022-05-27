@@ -6,14 +6,13 @@ import auth from '../../../firebase.init';
 import SocailLogin from './SocialLogin';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 
+
 const SignUp = () => {
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
     const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [passwordError,setPasswordError]= useState('');
     const navigate= useNavigate();
-
-    
 
 
     const onSubmit = async data => {

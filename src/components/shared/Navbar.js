@@ -7,6 +7,11 @@ import {signOut} from 'firebase/auth'
 const Navbar = () => {
     const [user]= useAuthState(auth);
 
+    const handleSignOut=()=>{
+        signOut(auth)
+        localStorage.removeItem('accessToken')
+    }
+
     const Links = <>
         <li><NavLink className='mt-2' to='/'>Home</NavLink></li>
         {
@@ -21,7 +26,7 @@ const Navbar = () => {
             user && <li><Link to='/dashboard/myprofile' className='mt-2 font-bold'>{user?.displayName}</Link></li>
         }
        {
-          user? <li><button onClick={()=>signOut(auth)} className='mt-2'>Logout</button></li>  :  <li><NavLink className='mt-2' to='/login'>Login</NavLink></li>
+          user? <li><button onClick={handleSignOut} className='mt-2'>Logout</button></li>  :  <li><NavLink className='mt-2' to='/login'>Login</NavLink></li>
        }
 
     </>

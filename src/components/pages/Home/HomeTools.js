@@ -4,7 +4,7 @@ import HomeTool from './HomeTool';
 
 const HomeTools = () => {
     // const [tools, setTools]= useState([])
-const { data: tools, isLoading } = useQuery(['tools'], () => fetch('http://localhost:5000/tools').then(res => res.json()));
+const { data: tools, isLoading } = useQuery(['tools'], () => fetch('http://localhost:5000/tools',).then(res => res.json()));
 
     if (isLoading) {
         return <progress class="progress w-56"></progress>
