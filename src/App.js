@@ -18,6 +18,8 @@ import UpdateProfile from './components/pages/Dashboard/UpdateProfile';
 import AdminRoute from './components/pages/Authentication/AdminRoute';
 import AddProduct from './components/pages/Dashboard/AddProduct';
 import ManageProducts from './components/pages/Dashboard/ManageProducts';
+import ManageOrders from './components/pages/Dashboard/ManageOrders';
+import ManageUsers from './components/pages/Dashboard/ManageUsers';
 
 function App() {
   return (
@@ -48,6 +50,8 @@ function App() {
           <Route path='addreview' element={<AddReview />}></Route>
           <Route path='addproduct' element={<AddProduct />}></Route>
           <Route path='manageproducts' element={<ManageProducts />}></Route>
+          <Route path='manageorders' element={<ManageOrders />}></Route>
+          <Route path='manageusers' element={<ManageUsers/>}></Route>
 
 
         </Route>

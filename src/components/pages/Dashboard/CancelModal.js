@@ -18,7 +18,7 @@ const CancelModal = ({cancelOrder, refetch}) => {
             <input type="checkbox" id="cancel-modal" class="modal-toggle" />
             <div class="modal">
                 <div class="modal-box">
-                    <h3 class="font-bold text-lg">Are You Sure Want To Delete <span className='text-warning font-bold'>{cancelOrder?.name}- {cancelOrder?.qyt} Pcs Order</span></h3>
+                    <h3 class="font-bold text-lg">Are You Sure Want To Cancel <span className='text-warning font-bold'>{cancelOrder?.name}- {cancelOrder?.qyt} Pcs Order</span></h3>
                     <div class="modal-action">
                         <label onClick={handleCancelOrder} for="cancel-modal" class="btn btn-error text-white font-bold">Yes Cancel This Order</label>
                         <label for="cancel-modal" class="btn">No</label>

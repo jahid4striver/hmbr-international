@@ -22,6 +22,8 @@ const [user]= useAuthState(auth)
                         <li><Link  to='/dashboard/myprofile'>My Profile</Link></li>
                         <li><Link  to='/dashboard/addproduct'>Add Product</Link></li>
                         <li><Link  to='/dashboard/manageproducts'>Manage Products</Link></li>
+                        <li><Link  to='/dashboard/manageorders'>Manage Orders</Link></li>
+                        <li><Link  to='/dashboard/manageusers'>Manage Users</Link></li>
                     </ul>
 
                 </div>
