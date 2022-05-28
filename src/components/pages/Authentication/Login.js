@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import login from '../../../assets/images/images/login.jpeg'
+import login from '../../../assets/images/images/login.png'
 import auth from '../../../firebase.init';
 import SocailLogin from './SocialLogin';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -30,7 +30,7 @@ const Login = () => {
             <div className='flex justify-center items-center my-16'>
                 <div className='w-9/12 lg:w-4/12 md:w-1/2 shadow-2xl p-12'>
                 <form onClick={handleSubmit(onSubmit)}>
-                    <img className='w-3/4 mx-auto' src={login} alt="" />
+                    <img className='w-2/4 mx-auto' src={login} alt="" />
                     <div class="form-control">
                         <label class="label">
                             <span class="label-text">Email Address</span>

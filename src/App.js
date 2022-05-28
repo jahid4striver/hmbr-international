@@ -25,6 +25,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
 import Blogs from './components/pages/Blogs/Blogs';
 import MyPortfolio from './components/pages/MyPortfolio/MyPortfolio';
+import NotFound from './components/pages/NotFound/NotFound';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/portfolio' element={<MyPortfolio />}></Route>
+        <Route path='*' element={<NotFound/>}></Route>
 
 
         {/* Private Routes */}
@@ -76,7 +78,7 @@ function App() {
         {/* Admin Routes */}
 
 
-
+       
       </Routes>
 
       <Footer></Footer>
