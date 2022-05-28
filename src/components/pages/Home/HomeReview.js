@@ -4,6 +4,8 @@ import r2 from '../../../assets/images/ratings/r2.png'
 import r3 from '../../../assets/images/ratings/r3.png'
 import r4 from '../../../assets/images/ratings/r4.png'
 import r5 from '../../../assets/images/ratings/r5.png'
+import profile from '../../../assets/images/images/profile.png'
+
 
 const HomeReview = ({ review }) => {
     const {name, img, description,rating}= review;
@@ -27,7 +29,7 @@ const HomeReview = ({ review }) => {
                 <div class="card-body flex justify-center items-center p-4">
                     <div class="avatar online">
                         <div class="w-48 rounded-full">
-                            <img src={img} alt="avator"/>
+                            <img src={img || profile} alt="avator"/>
                         </div>
                     </div>
                     <h2 class="card-title">{name}</h2>
