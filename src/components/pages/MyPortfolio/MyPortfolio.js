@@ -31,7 +31,7 @@ const MyPortfolio = () => {
                         <p>Email Address: jahihassan701@gmail.com</p>
                         <p>Education: BBA Honours In Management (National University) </p>
                         <h2 class="card-title">Web Technologies</h2>
-                        <div className='grid grid-cols-8 gap-2'>
+                        <div className='grid grid-cols-10 mx-auto gap-2'>
                             <div className='text-center'>
                                 <img className='w-8' src={html5} alt="HTML5" />
                             </div>
