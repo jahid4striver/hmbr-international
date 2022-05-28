@@ -60,7 +60,7 @@ function App() {
         <Route path='/dashboard' element={<PrivateRoute>
           <Dashboard />
         </PrivateRoute>}>
-          <Route index element={<MyOrders />}></Route>
+          <Route path='myorders' element={<MyOrders />}></Route>
           <Route path='addreview' element={<AddReview />}></Route>
           <Route path='myprofile' element={<MyProfile />}></Route>
           <Route path='myprofile/updateprofile' element={<UpdateProfile />}></Route>
