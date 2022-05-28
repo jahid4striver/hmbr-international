@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 const useWebToken = (user) => {
     const [token, setToken] = useState('');
     const email = user?.user?.email;
-    const currentUser = { email: email };
+
+    const currentUser = {email: email};
 
 
     useEffect(() => {
@@ -27,7 +28,7 @@ const useWebToken = (user) => {
                 }
             
         
-    }, [currentUser,email])
+    }, [email])
 
     return [token]
 };

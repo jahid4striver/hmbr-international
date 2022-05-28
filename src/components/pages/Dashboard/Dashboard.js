@@ -10,7 +10,7 @@ const [user]= useAuthState(auth);
 const [admin, setAdmin]=useState();
 const [dashboard, setDashboard]= useState(false)
 
-console.log(admin);
+const displayName= user?.displayName
 const email=user?.email;
 
     
@@ -20,7 +20,21 @@ fetch(`http://localhost:5000/users?email=${email}`)
     setAdmin(data?.role)
 })
 
+// for adding user name to database
 
+fetch(`http://localhost:5000/users/${email}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({displayName})
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    
+                })
+                
 
     return (
         <div>
