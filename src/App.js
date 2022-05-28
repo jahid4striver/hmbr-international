@@ -20,6 +20,7 @@ import AddProduct from './components/pages/Dashboard/AddProduct';
 import ManageProducts from './components/pages/Dashboard/ManageProducts';
 import ManageOrders from './components/pages/Dashboard/ManageOrders';
 import ManageUsers from './components/pages/Dashboard/ManageUsers';
+import Tools from './components/pages/Tools/Tools';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         {/* Public Routes */}
 
         <Route path='/' element={<Home />}></Route>
+        <Route path='/tools' element={<Tools />}></Route>
         <Route path='/Login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
 

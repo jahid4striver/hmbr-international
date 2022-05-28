@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -8,8 +8,8 @@ const Banner = () => {
             <div class="hero-content text-center text-neutral-content">
                 <div class="max-w-md">
                     <h1 class="mb-5 text-5xl font-bold">HMBR Tools And Hardware</h1>
-                    <p class="mb-5">Start Your Bussiness With Makute International, World On Of the Best Tools and Machinary Menufacturer</p>
-                    <button class="btn btn-primary">Get Started</button>
+                    <p class="mb-5">Start Your Bussiness With HMBR International, World On Of the Best Tools and Machinary Menufacturer</p>
+                    <button class="btn btn-accent text-white font-bold"><Link to='/tools'>Get Started</Link></button>
                 </div>
             </div>
         </div>

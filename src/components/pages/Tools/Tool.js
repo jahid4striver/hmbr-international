@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const HomeTool = ({tool}) => {
+const Tool = ({tool}) => {
     const {_id, img, name, description, minimum_qyt, available_qyt, price}=tool;
     return (
         <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
@@ -11,7 +11,7 @@ const HomeTool = ({tool}) => {
                 <div className='text-left bg-base-100 text-gray py-2'>
                 <h2 class="card-title text-accent">{name}</h2>
                 <p>{description}</p>
-                <p className='text-xl font-medium'>Price:  ${price} Per Unit</p>
+                <p className='text-xl font-medium'>Price: ${price} Per Unit</p>
                 <p className='font-medium'>Minimum Order Quantity: {minimum_qyt} Pcs</p>
                 </div>
                 <h3 className='text-xl mt-4 font-bold'>Available Stock: {available_qyt} Pcs</h3>
@@ -23,4 +23,4 @@ const HomeTool = ({tool}) => {
     );
 };
 
-export default HomeTool;
+export default Tool;

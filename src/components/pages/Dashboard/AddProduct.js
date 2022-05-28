@@ -14,10 +14,10 @@ const AddProduct = () => {
 
 
         const name = e.target.name.value;
-        const price = e.target.price.value;
+        const price = parseInt(e.target.price.value);
         const description = e.target.description.value;
-        const minimum_qyt = e.target.minimum_qyt.value;
-        const available_qyt = e.target.available_qyt.value;
+        const minimum_qyt = parseInt(e.target.minimum_qyt.value);
+        const available_qyt = parseInt(e.target.available_qyt.value);
 
         const image = e.target.img.files[0];
         const formData = new FormData();
@@ -45,6 +45,7 @@ const AddProduct = () => {
                     .then(res=> res.json())
                     .then(data=> {
                         toast('Product Added Successfull')
+                        e.target.reset();
                     })
 
                     
