@@ -14,7 +14,7 @@ const displayName= user?.displayName
 const email=user?.email;
 
     
-fetch(`http://localhost:5000/users?email=${email}`)
+fetch(`https://salty-dawn-53601.herokuapp.com/users?email=${email}`)
 .then(res=> res.json())
 .then(data=>{
     setAdmin(data?.role)
@@ -22,7 +22,7 @@ fetch(`http://localhost:5000/users?email=${email}`)
 
 // for adding user name to database
 
-fetch(`http://localhost:5000/users/${email}`, {
+fetch(`https://salty-dawn-53601.herokuapp.com/users/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

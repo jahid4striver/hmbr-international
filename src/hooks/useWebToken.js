@@ -10,7 +10,7 @@ const useWebToken = (user) => {
     useEffect(() => {
           
                 if(email){
-                    fetch(`http://localhost:5000/users/${email}`, {
+                    fetch(`https://salty-dawn-53601.herokuapp.com/users/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
