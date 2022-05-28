@@ -1,8 +1,9 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import {signOut} from 'firebase/auth'
+import CustomLink from '../../hooks/CustomLink';
 
 const Navbar = () => {
     const [user]= useAuthState(auth);
@@ -13,20 +14,20 @@ const Navbar = () => {
     }
 
     const Links = <>
-        <li><NavLink className='mt-2' to='/'>Home</NavLink></li>
+        <li><CustomLink className='mt-2' to='/'>Home</CustomLink></li>
         {
-         user &&   <li><NavLink className='mt-2' to='/dashboard'>Dashboard</NavLink></li>
+         user &&   <li><CustomLink className='mt-2' to='/dashboard'>Dashboard</CustomLink></li>
         }
 
-        <li><NavLink className='mt-2' to='/tools'>Tools</NavLink></li>
-        <li><NavLink className='mt-2' to='/about'>About Us</NavLink></li>
-        <li><NavLink className='mt-2' to='/contact'>Contact Us</NavLink></li>
+        <li><CustomLink className='mt-2' to='/tools'>Tools</CustomLink></li>
+        <li><CustomLink className='mt-2' to='/about'>About Us</CustomLink></li>
+        <li><CustomLink className='mt-2' to='/contact'>Contact Us</CustomLink></li>
     
         {
             user && <li><Link to='/dashboard/myprofile' className='mt-2 font-bold'>{user?.displayName}</Link></li>
         }
        {
-          user? <li><button onClick={handleSignOut} className='mt-2'>Logout</button></li>  :  <li><NavLink className='mt-2' to='/login'>Login</NavLink></li>
+          user? <li><button onClick={handleSignOut} className='mt-2'>Logout</button></li>  :  <li><CustomLink className='mt-2' to='/login'>Login</CustomLink></li>
        }
 
     </>

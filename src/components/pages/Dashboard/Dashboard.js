@@ -1,7 +1,9 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import CustomLink from '../../../hooks/CustomLink';
+
 
 const Dashboard = () => {
 const [user]= useAuthState(auth)
@@ -17,13 +19,13 @@ const [user]= useAuthState(auth)
                 <div class="drawer-side mt-px">
                     <label for="my-drawer-2" class="drawer-overlay"></label>
                     <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-                        <li><Link to='/dashboard'>My Orders</Link></li>
-                        <li><Link to='/dashboard/addreview'>Add A Review</Link></li>
-                        <li><Link  to='/dashboard/myprofile'>My Profile</Link></li>
-                        <li><Link  to='/dashboard/addproduct'>Add Product</Link></li>
-                        <li><Link  to='/dashboard/manageproducts'>Manage Products</Link></li>
-                        <li><Link  to='/dashboard/manageorders'>Manage Orders</Link></li>
-                        <li><Link  to='/dashboard/manageusers'>Manage Users</Link></li>
+                        <li><CustomLink to='/dashboard'>My Orders</CustomLink></li>
+                        <li><CustomLink to='/dashboard/addreview'>Add A Review</CustomLink></li>
+                        <li><CustomLink  to='/dashboard/myprofile'>My Profile</CustomLink></li>
+                        <li><CustomLink  to='/dashboard/addproduct'>Add Product</CustomLink></li>
+                        <li><CustomLink  to='/dashboard/manageproducts'>Manage Products</CustomLink></li>
+                        <li><CustomLink  to='/dashboard/manageorders'>Manage Orders</CustomLink></li>
+                        <li><CustomLink  to='/dashboard/manageusers'>Manage Users</CustomLink></li>
                     </ul>
 
                 </div>

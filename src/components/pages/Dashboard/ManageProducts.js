@@ -14,7 +14,12 @@ const ManageProducts = () => {
     // const [editProduct, setEditProduct]= useState(null);
     // const email= user?.email;
 
-    const { data: tools, isLoading, refetch } = useQuery(['tools'], () => fetch(`https://salty-dawn-53601.herokuapp.com/tools`).then(res => res.json()));
+    const { data: tools, isLoading, refetch } = useQuery(['tools'], () => fetch(`http://localhost:5000/tools`,{
+        method: 'GET',
+        headers:{
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()));
 
     if (isLoading) {
         return <Loading></Loading>
