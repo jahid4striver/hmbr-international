@@ -20,9 +20,8 @@ const Navbar = () => {
         }
 
         <li><CustomLink className='mt-2' to='/tools'>Tools</CustomLink></li>
-        <li><CustomLink className='mt-2' to='/about'>About Us</CustomLink></li>
-        <li><CustomLink className='mt-2' to='/contact'>Contact Us</CustomLink></li>
-    
+        <li><CustomLink className='mt-2' to='/blogs'>Blogs</CustomLink></li>
+        <li><CustomLink className='mt-2' to='/portfolio'>My Portfolio</CustomLink></li>
         {
             user && <li><Link to='/dashboard/myprofile' className='mt-2 font-bold'>{user?.displayName}</Link></li>
         }

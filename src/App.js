@@ -21,8 +21,19 @@ import ManageProducts from './components/pages/Dashboard/ManageProducts';
 import ManageOrders from './components/pages/Dashboard/ManageOrders';
 import ManageUsers from './components/pages/Dashboard/ManageUsers';
 import Tools from './components/pages/Tools/Tools';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './firebase.init';
+import Blogs from './components/pages/Blogs/Blogs';
+import MyPortfolio from './components/pages/MyPortfolio/MyPortfolio';
 
 function App() {
+
+  const [user]= useAuthState(auth)
+  console.log(user);
+
+  
+
+
   return (
     <div className="App">
       <Navbar></Navbar>
@@ -34,6 +45,9 @@ function App() {
         <Route path='/tools' element={<Tools />}></Route>
         <Route path='/Login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
+        <Route path='/blogs' element={<Blogs />}></Route>
+        <Route path='/portfolio' element={<MyPortfolio />}></Route>
+
 
         {/* Private Routes */}
 

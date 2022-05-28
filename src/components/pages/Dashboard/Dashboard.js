@@ -6,7 +6,9 @@ import CustomLink from '../../../hooks/CustomLink';
 
 
 const Dashboard = () => {
-const [user]= useAuthState(auth)
+const [user]= useAuthState(auth);
+
+console.log(user);
     
     return (
         <div>
